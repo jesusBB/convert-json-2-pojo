@@ -1,5 +1,5 @@
 
-package com.json2pojo.bettinginfo.jsontojavaclass.pojo;
+package com.json2pojo.match;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,10 +10,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "id",
     "name",
     "code",
-    "type",
-    "emblem"
+    "flag"
 })
-public class Competition__1 {
+public class Area {
 
     @JsonProperty("id")
     public Integer id;
@@ -21,9 +20,7 @@ public class Competition__1 {
     public String name;
     @JsonProperty("code")
     public String code;
-    @JsonProperty("type")
-    public String type;
-    @JsonProperty("emblem")
-    public String emblem;
+    @JsonProperty("flag")
+    public String flag;
 
 }

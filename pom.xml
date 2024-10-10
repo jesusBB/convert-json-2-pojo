@@ -37,7 +37,7 @@
         <dependency>
             <groupId>org.jsonschema2pojo</groupId>
             <artifactId>jsonschema2pojo-core</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
         </dependency>
 
         <dependency>
@@ -61,6 +61,45 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                <version>1.2.2</version>
+                <configuration>
+                    <sourceDirectory>${basedir}/src/main/resources/sofascore/maven</sourceDirectory>
+                    <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
+                    <targetPackage>com.json2pojo.sofascore</targetPackage>
+
+                    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
+                    <includeJsr303Annotations>false</includeJsr303Annotations>
+                    <includeJsr305Annotations>false</includeJsr305Annotations>
+                    <annotationStyle>NONE</annotationStyle>
+                    <includeAdditionalProperties>false</includeAdditionalProperties>
+                    <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+                    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
+                    <includeToString>false</includeToString>
+                    <includeGetters>false</includeGetters>
+                    <includeSetters>false</includeSetters>
+                    <includeRequiredPropertiesConstructor>false</includeRequiredPropertiesConstructor>
+
+                    <includeRequiredPropertiesConstructor>false</includeRequiredPropertiesConstructor>
+                     <customAnnotator>com.json2pojo.custom.CustomAnnotator</customAnnotator>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--  <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-javadoc-plugin</artifactId>
+                  <configuration>
+                      <doclint>none</doclint>
+                  </configuration>
+              </plugin>-->
         </plugins>
     </build>
 

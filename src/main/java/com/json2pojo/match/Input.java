@@ -1,5 +1,5 @@
 
-package com.json2pojo.bettinginfo.jsontojavaclass.pojo;
+package com.json2pojo.match;
 
 import java.util.ArrayList;
 import java.util.List;

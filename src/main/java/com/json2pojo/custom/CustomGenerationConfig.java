@@ -30,23 +30,20 @@ public class CustomGenerationConfig extends DefaultGenerationConfig {
   public boolean isIncludeHashcodeAndEquals(){
     return false;
   }
-  @Override
-  public boolean isIncludeAdditionalProperties(){
-    return false;
-  }
+
   @Override
   public boolean isIncludeGeneratedAnnotation(){
     return false;
   }
+
   @Override
   public Class<? extends Annotator> getCustomAnnotator(){
     return CustomAnnotator.class;
   }
 
-
   @Override
   public SourceType getSourceType() {
-    return SourceType.JSON;
+    return SourceType.JSONSCHEMA;
   }
   @Override
   public AnnotationStyle getAnnotationStyle() {

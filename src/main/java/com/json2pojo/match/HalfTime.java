@@ -1,5 +1,5 @@
 
-package com.json2pojo.bettinginfo.jsontojavaclass.pojo;
+package com.json2pojo.match;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -20,4 +20,5 @@ public class CustomAnnotator extends AbstractAnnotator {
   public void propertyField(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
     // Do not generate @JsonProperty annotation
   }
+
 }

@@ -1,5 +1,6 @@
 package com.json2pojo;
 
+import com.json2pojo.custom.CustomAnnotator;
 import com.sun.codemodel.JCodeModel;
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class ConvertJson2PojoApplication {
     String baseOutputPath = "src/main/java";
 
     File inputJson = new File(
-        baseInputPath + File.separator + "sofascore" + File.separator + "team-schema2.json");
+        baseInputPath + File.separator + "sofascore" + File.separator + "maven" + File.separator + "team-schema.json");
     File outputPojoDirectory = new File(baseOutputPath /*+ File.separator  + "convertedPojo"*/);
     outputPojoDirectory.mkdirs();
     try {
@@ -47,7 +48,7 @@ public class ConvertJson2PojoApplication {
 
     SchemaMapper
         mapper =
-        new SchemaMapper(new RuleFactory(config, new Jackson2Annotator(config), new SchemaStore()),
+        new SchemaMapper(new RuleFactory(config, new CustomAnnotator(), new SchemaStore()),
             new SchemaGenerator());
     mapper.generate(jcodeModel, javaClassName, packageName, inputJsonUrl);
 

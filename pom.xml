@@ -76,14 +76,13 @@
                     <annotationStyle>NONE</annotationStyle>
                     <includeAdditionalProperties>false</includeAdditionalProperties>
                     <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
-                    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
                     <includeToString>false</includeToString>
                     <includeGetters>false</includeGetters>
                     <includeSetters>false</includeSetters>
                     <includeRequiredPropertiesConstructor>false</includeRequiredPropertiesConstructor>
-
-                    <includeRequiredPropertiesConstructor>false</includeRequiredPropertiesConstructor>
+                    <!--
                      <customAnnotator>com.json2pojo.custom.CustomAnnotator</customAnnotator>
+-->
                 </configuration>
                 <executions>
                     <execution>

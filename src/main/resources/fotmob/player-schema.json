@@ -1,0 +1,1802 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome4",
+  "definitions": {
+    "Welcome4": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "$ref": "#/definitions/PlayerNameEnum"
+        },
+        "birthDate": {
+          "$ref": "#/definitions/BirthDate"
+        },
+        "isCoach": {
+          "type": "boolean"
+        },
+        "isCaptain": {
+          "type": "boolean"
+        },
+        "primaryTeam": {
+          "$ref": "#/definitions/PrimaryTeam"
+        },
+        "positionDescription": {
+          "$ref": "#/definitions/PositionDescription"
+        },
+        "injuryInformation": {
+          "type": "null"
+        },
+        "internationalDuty": {
+          "type": "null"
+        },
+        "playerInformation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PlayerInformation"
+          }
+        },
+        "mainLeague": {
+          "$ref": "#/definitions/MainLeague"
+        },
+        "trophies": {
+          "$ref": "#/definitions/Trophies"
+        },
+        "recentMatches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RecentMatch"
+          }
+        },
+        "careerHistory": {
+          "$ref": "#/definitions/CareerHistory"
+        },
+        "traits": {
+          "$ref": "#/definitions/Traits"
+        },
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "coachStats": {
+          "type": "null"
+        },
+        "statSeasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StatSeason"
+          }
+        },
+        "firstSeasonStats": {
+          "$ref": "#/definitions/FirstSeasonStats"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "birthDate",
+        "careerHistory",
+        "coachStats",
+        "firstSeasonStats",
+        "id",
+        "injuryInformation",
+        "internationalDuty",
+        "isCaptain",
+        "isCoach",
+        "mainLeague",
+        "meta",
+        "name",
+        "playerInformation",
+        "positionDescription",
+        "primaryTeam",
+        "recentMatches",
+        "statSeasons",
+        "status",
+        "traits",
+        "trophies"
+      ],
+      "title": "Welcome4"
+    },
+    "BirthDate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "utcTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "timezone",
+        "utcTime"
+      ],
+      "title": "BirthDate"
+    },
+    "CareerHistory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "showFootnote": {
+          "type": "boolean"
+        },
+        "careerItems": {
+          "$ref": "#/definitions/CareerItems"
+        },
+        "fullCareer": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "careerItems",
+        "fullCareer",
+        "showFootnote"
+      ],
+      "title": "CareerHistory"
+    },
+    "CareerItems": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "senior": {
+          "$ref": "#/definitions/NationalTeam"
+        },
+        "youth": {
+          "$ref": "#/definitions/Youth"
+        },
+        "national team": {
+          "$ref": "#/definitions/NationalTeam"
+        }
+      },
+      "required": [
+        "national team",
+        "senior",
+        "youth"
+      ],
+      "title": "CareerItems"
+    },
+    "NationalTeam": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "teamEntries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TeamEntry"
+          }
+        },
+        "seasonEntries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NationalTeamSeasonEntry"
+          }
+        }
+      },
+      "required": [
+        "seasonEntries",
+        "teamEntries"
+      ],
+      "title": "NationalTeam"
+    },
+    "NationalTeamSeasonEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "seasonName": {
+          "type": "string"
+        },
+        "appearances": {
+          "type": "string",
+          "format": "integer"
+        },
+        "goals": {
+          "type": "string",
+          "format": "integer"
+        },
+        "assists": {
+          "type": "string"
+        },
+        "rating": {
+          "$ref": "#/definitions/Rating"
+        },
+        "tournamentStats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PurpleTournamentStat"
+          }
+        },
+        "teamId": {
+          "type": "integer"
+        },
+        "team": {
+          "type": "string"
+        },
+        "teamGender": {
+          "type": "string"
+        },
+        "showTeamGender": {
+          "type": "boolean"
+        },
+        "transferType": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "appearances",
+        "assists",
+        "goals",
+        "rating",
+        "seasonName",
+        "showTeamGender",
+        "team",
+        "teamGender",
+        "teamId",
+        "tournamentStats",
+        "transferType"
+      ],
+      "title": "NationalTeamSeasonEntry"
+    },
+    "Rating": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "num": {
+          "type": "string"
+        },
+        "bgcolor": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Bgcolor"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "bgcolor",
+        "num"
+      ],
+      "title": "Rating"
+    },
+    "PurpleTournamentStat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "leagueId": {
+          "type": "integer"
+        },
+        "tournamentId": {
+          "type": "integer"
+        },
+        "leagueName": {
+          "type": "string"
+        },
+        "seasonRating": {
+          "type": "number"
+        },
+        "isFriendly": {
+          "type": "boolean"
+        },
+        "seasonName": {
+          "type": "string"
+        },
+        "goals": {
+          "type": "string",
+          "format": "integer"
+        },
+        "assists": {
+          "type": "string"
+        },
+        "appearances": {
+          "type": "string",
+          "format": "integer"
+        },
+        "rating": {
+          "$ref": "#/definitions/Rating"
+        }
+      },
+      "required": [
+        "appearances",
+        "assists",
+        "goals",
+        "isFriendly",
+        "leagueName",
+        "rating",
+        "seasonName",
+        "tournamentId"
+      ],
+      "title": "PurpleTournamentStat"
+    },
+    "TeamEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "participantId": {
+          "type": "integer"
+        },
+        "teamId": {
+          "type": "integer"
+        },
+        "team": {
+          "type": "string"
+        },
+        "teamGender": {
+          "type": "string"
+        },
+        "showTeamGender": {
+          "type": "boolean"
+        },
+        "transferType": {
+          "type": "null"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "role": {
+          "type": "null"
+        },
+        "appearances": {
+          "type": "string",
+          "format": "integer"
+        },
+        "goals": {
+          "type": "string",
+          "format": "integer"
+        },
+        "assists": {
+          "type": "string"
+        },
+        "hasUncertainData": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "active",
+        "appearances",
+        "assists",
+        "endDate",
+        "goals",
+        "hasUncertainData",
+        "participantId",
+        "role",
+        "showTeamGender",
+        "startDate",
+        "team",
+        "teamGender",
+        "teamId",
+        "transferType"
+      ],
+      "title": "TeamEntry"
+    },
+    "Youth": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "teamEntries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TeamEntry"
+          }
+        },
+        "seasonEntries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/YouthSeasonEntry"
+          }
+        }
+      },
+      "required": [
+        "seasonEntries",
+        "teamEntries"
+      ],
+      "title": "Youth"
+    },
+    "YouthSeasonEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "seasonName": {
+          "type": "string"
+        },
+        "appearances": {
+          "type": "string",
+          "format": "integer"
+        },
+        "goals": {
+          "type": "string",
+          "format": "integer"
+        },
+        "assists": {
+          "type": "string",
+          "format": "integer"
+        },
+        "rating": {
+          "$ref": "#/definitions/Rating"
+        },
+        "tournamentStats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FluffyTournamentStat"
+          }
+        },
+        "teamId": {
+          "type": "integer"
+        },
+        "team": {
+          "type": "string"
+        },
+        "teamGender": {
+          "type": "string"
+        },
+        "showTeamGender": {
+          "type": "boolean"
+        },
+        "transferType": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "appearances",
+        "assists",
+        "goals",
+        "rating",
+        "seasonName",
+        "showTeamGender",
+        "team",
+        "teamGender",
+        "teamId",
+        "tournamentStats",
+        "transferType"
+      ],
+      "title": "YouthSeasonEntry"
+    },
+    "FluffyTournamentStat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tournamentId": {
+          "type": "integer"
+        },
+        "leagueName": {
+          "type": "string"
+        },
+        "isFriendly": {
+          "type": "boolean"
+        },
+        "seasonName": {
+          "type": "string"
+        },
+        "goals": {
+          "type": "string",
+          "format": "integer"
+        },
+        "assists": {
+          "type": "string",
+          "format": "integer"
+        },
+        "appearances": {
+          "type": "string",
+          "format": "integer"
+        },
+        "rating": {
+          "$ref": "#/definitions/Rating"
+        }
+      },
+      "required": [
+        "appearances",
+        "assists",
+        "goals",
+        "isFriendly",
+        "leagueName",
+        "rating",
+        "seasonName",
+        "tournamentId"
+      ],
+      "title": "FluffyTournamentStat"
+    },
+    "FirstSeasonStats": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sectionOrder": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "topStatCard": {
+          "$ref": "#/definitions/TopStatCard"
+        },
+        "statsSection": {
+          "$ref": "#/definitions/StatsSection"
+        },
+        "shotmap": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Shotmap"
+          }
+        },
+        "keeperShotmap": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "keeperShotmap",
+        "sectionOrder",
+        "shotmap",
+        "statsSection",
+        "topStatCard"
+      ],
+      "title": "FirstSeasonStats"
+    },
+    "Shotmap": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "eventType": {
+          "$ref": "#/definitions/EventType"
+        },
+        "teamId": {
+          "type": "integer"
+        },
+        "playerId": {
+          "type": "integer"
+        },
+        "playerName": {
+          "$ref": "#/definitions/PlayerNameEnum"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "min": {
+          "type": "integer"
+        },
+        "isBlocked": {
+          "type": "boolean"
+        },
+        "isOnTarget": {
+          "type": "boolean"
+        },
+        "blockedX": {
+          "type": "number"
+        },
+        "blockedY": {
+          "type": "number"
+        },
+        "goalCrossedY": {
+          "type": "number"
+        },
+        "goalCrossedZ": {
+          "type": "number"
+        },
+        "expectedGoals": {
+          "type": "number"
+        },
+        "expectedGoalsOnTarget": {
+          "type": "number"
+        },
+        "shotType": {
+          "$ref": "#/definitions/ShotType"
+        },
+        "situation": {
+          "$ref": "#/definitions/Situation"
+        },
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "isOwnGoal": {
+          "type": "boolean"
+        },
+        "onGoalShot": {
+          "$ref": "#/definitions/OnGoalShot"
+        },
+        "isSavedOffLine": {
+          "type": "boolean"
+        },
+        "isFromInsideBox": {
+          "type": "boolean"
+        },
+        "box": {
+          "$ref": "#/definitions/Box"
+        },
+        "homeTeamId": {
+          "type": "integer"
+        },
+        "awayTeamId": {
+          "type": "integer"
+        },
+        "homeTeamName": {
+          "type": "string"
+        },
+        "awayTeamName": {
+          "$ref": "#/definitions/TeamName"
+        },
+        "homeScore": {
+          "type": "integer"
+        },
+        "awayScore": {
+          "type": "integer"
+        },
+        "matchId": {
+          "type": "integer"
+        },
+        "matchDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "teamColor": {
+          "$ref": "#/definitions/Color"
+        },
+        "teamColorDark": {
+          "$ref": "#/definitions/ColorAlternate"
+        },
+        "minAdded": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "awayScore",
+        "awayTeamId",
+        "awayTeamName",
+        "box",
+        "eventType",
+        "expectedGoals",
+        "expectedGoalsOnTarget",
+        "goalCrossedY",
+        "goalCrossedZ",
+        "homeScore",
+        "homeTeamId",
+        "homeTeamName",
+        "id",
+        "isBlocked",
+        "isFromInsideBox",
+        "isOnTarget",
+        "isOwnGoal",
+        "isSavedOffLine",
+        "matchDate",
+        "matchId",
+        "min",
+        "onGoalShot",
+        "period",
+        "playerId",
+        "playerName",
+        "shotType",
+        "situation",
+        "teamColor",
+        "teamColorDark",
+        "teamId",
+        "x",
+        "y"
+      ],
+      "title": "Shotmap"
+    },
+    "OnGoalShot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "zoomRatio": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "zoomRatio"
+      ],
+      "title": "OnGoalShot"
+    },
+    "StatsSection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "localizedTitleId": {
+          "type": "string"
+        },
+        "subTitle": {
+          "type": "string"
+        },
+        "localizedSubTitleId": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopStatCard"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "items",
+        "localizedSubTitleId",
+        "localizedTitleId",
+        "subTitle",
+        "title",
+        "type"
+      ],
+      "title": "StatsSection"
+    },
+    "TopStatCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "localizedTitleId": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopStatCardItem"
+          }
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "display",
+        "items",
+        "localizedTitleId",
+        "title",
+        "type"
+      ],
+      "title": "TopStatCard"
+    },
+    "TopStatCardItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "localizedTitleId": {
+          "type": "string"
+        },
+        "statValue": {
+          "type": "string"
+        },
+        "per90": {
+          "type": "number"
+        },
+        "percentileRank": {
+          "type": "number"
+        },
+        "percentileRankPer90": {
+          "type": "number"
+        },
+        "statFormat": {
+          "$ref": "#/definitions/StatFormat"
+        }
+      },
+      "required": [
+        "localizedTitleId",
+        "per90",
+        "percentileRank",
+        "percentileRankPer90",
+        "statFormat",
+        "statValue",
+        "title"
+      ],
+      "title": "TopStatCardItem"
+    },
+    "MainLeague": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "leagueId": {
+          "type": "integer"
+        },
+        "leagueName": {
+          "type": "string"
+        },
+        "season": {
+          "type": "string"
+        },
+        "stats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Stat"
+          }
+        }
+      },
+      "required": [
+        "leagueId",
+        "leagueName",
+        "season",
+        "stats"
+      ],
+      "title": "MainLeague"
+    },
+    "Stat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "localizedTitleId": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "localizedTitleId",
+        "title",
+        "value"
+      ],
+      "title": "Stat"
+    },
+    "Meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "seopath": {
+          "type": "string"
+        },
+        "pageurl": {
+          "type": "string"
+        },
+        "faqJSONLD": {
+          "$ref": "#/definitions/FAQJSONLD"
+        },
+        "personJSONLD": {
+          "$ref": "#/definitions/PersonJSONLD"
+        },
+        "breadcrumbJSONLD": {
+          "$ref": "#/definitions/BreadcrumbJSONLD"
+        }
+      },
+      "required": [
+        "breadcrumbJSONLD",
+        "faqJSONLD",
+        "pageurl",
+        "personJSONLD",
+        "seopath"
+      ],
+      "title": "Meta"
+    },
+    "BreadcrumbJSONLD": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "@type": {
+          "type": "string"
+        },
+        "itemListElement": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemListElement"
+          }
+        }
+      },
+      "required": [
+        "@context",
+        "@type",
+        "itemListElement"
+      ],
+      "title": "BreadcrumbJSONLD"
+    },
+    "ItemListElement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "position": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "item": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        }
+      },
+      "required": [
+        "@type",
+        "item",
+        "name",
+        "position"
+      ],
+      "title": "ItemListElement"
+    },
+    "FAQJSONLD": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "@type": {
+          "type": "string"
+        },
+        "mainEntity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MainEntity"
+          }
+        }
+      },
+      "required": [
+        "@context",
+        "@type",
+        "mainEntity"
+      ],
+      "title": "FAQJSONLD"
+    },
+    "MainEntity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "acceptedAnswer": {
+          "$ref": "#/definitions/AcceptedAnswer"
+        }
+      },
+      "required": [
+        "@type",
+        "acceptedAnswer",
+        "name"
+      ],
+      "title": "MainEntity"
+    },
+    "AcceptedAnswer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "text"
+      ],
+      "title": "AcceptedAnswer"
+    },
+    "PersonJSONLD": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "@type": {
+          "type": "string"
+        },
+        "name": {
+          "$ref": "#/definitions/PlayerNameEnum"
+        },
+        "birthDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "nationality": {
+          "$ref": "#/definitions/Affiliation"
+        },
+        "affiliation": {
+          "$ref": "#/definitions/Affiliation"
+        },
+        "gender": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "height": {
+          "$ref": "#/definitions/Eight"
+        },
+        "weight": {
+          "$ref": "#/definitions/Eight"
+        }
+      },
+      "required": [
+        "@context",
+        "@type",
+        "affiliation",
+        "birthDate",
+        "gender",
+        "height",
+        "name",
+        "nationality",
+        "url",
+        "weight"
+      ],
+      "title": "PersonJSONLD"
+    },
+    "Affiliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "name": {
+          "$ref": "#/definitions/TeamNameEnum"
+        }
+      },
+      "required": [
+        "@type",
+        "name"
+      ],
+      "title": "Affiliation"
+    },
+    "Eight": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "unitText": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "integer"
+        }
+      },
+      "required": [
+        "@type",
+        "unitText",
+        "value"
+      ],
+      "title": "Eight"
+    },
+    "PlayerInformation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Value"
+        },
+        "title": {
+          "type": "string"
+        },
+        "translationKey": {
+          "type": "string"
+        },
+        "icon": {
+          "$ref": "#/definitions/Icon"
+        },
+        "countryCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "translationKey",
+        "value"
+      ],
+      "title": "PlayerInformation"
+    },
+    "Icon": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "title": "Icon"
+    },
+    "Value": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "numberValue": {
+          "type": "integer"
+        },
+        "options": {
+          "$ref": "#/definitions/Options"
+        },
+        "key": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "fallback": {
+          "$ref": "#/definitions/Fallback"
+        }
+      },
+      "required": [
+        "fallback",
+        "key"
+      ],
+      "title": "Value"
+    },
+    "Options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "unitDisplay": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "notation": {
+          "type": "string"
+        },
+        "compactDisplay": {
+          "type": "string"
+        },
+        "maximumFractionDigits": {
+          "type": "integer"
+        },
+        "minimumFractionDigits": {
+          "type": "integer"
+        },
+        "trailingZeroDisplay": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "title": "Options"
+    },
+    "PositionDescription": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Position"
+          }
+        },
+        "primaryPosition": {
+          "$ref": "#/definitions/PrimaryPosition"
+        },
+        "nonPrimaryPositions": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "nonPrimaryPositions",
+        "positions",
+        "primaryPosition"
+      ],
+      "title": "PositionDescription"
+    },
+    "Position": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "strPos": {
+          "$ref": "#/definitions/PrimaryPosition"
+        },
+        "strPosShort": {
+          "$ref": "#/definitions/PrimaryPosition"
+        },
+        "occurences": {
+          "type": "integer"
+        },
+        "position": {
+          "type": "string",
+          "format": "integer"
+        },
+        "isMainPosition": {
+          "type": "boolean"
+        },
+        "pitchPositionData": {
+          "$ref": "#/definitions/PitchPositionData"
+        }
+      },
+      "required": [
+        "isMainPosition",
+        "occurences",
+        "pitchPositionData",
+        "position",
+        "strPos",
+        "strPosShort"
+      ],
+      "title": "Position"
+    },
+    "PitchPositionData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "right": {
+          "type": "number"
+        },
+        "top": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "right",
+        "top"
+      ],
+      "title": "PitchPositionData"
+    },
+    "PrimaryPosition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "label"
+      ],
+      "title": "PrimaryPosition"
+    },
+    "PrimaryTeam": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "teamId": {
+          "type": "integer"
+        },
+        "teamName": {
+          "$ref": "#/definitions/TeamName"
+        },
+        "onLoan": {
+          "type": "boolean"
+        },
+        "teamColors": {
+          "$ref": "#/definitions/TeamColors"
+        }
+      },
+      "required": [
+        "onLoan",
+        "teamColors",
+        "teamId",
+        "teamName"
+      ],
+      "title": "PrimaryTeam"
+    },
+    "TeamColors": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "color": {
+          "$ref": "#/definitions/Color"
+        },
+        "colorAlternate": {
+          "$ref": "#/definitions/ColorAlternate"
+        },
+        "colorAway": {
+          "type": "string"
+        },
+        "colorAwayAlternate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "color",
+        "colorAlternate",
+        "colorAway",
+        "colorAwayAlternate"
+      ],
+      "title": "TeamColors"
+    },
+    "RecentMatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "teamId": {
+          "type": "integer"
+        },
+        "teamName": {
+          "$ref": "#/definitions/TeamNameEnum"
+        },
+        "opponentTeamId": {
+          "type": "integer"
+        },
+        "opponentTeamName": {
+          "type": "string"
+        },
+        "isHomeTeam": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "matchDate": {
+          "$ref": "#/definitions/MatchDate"
+        },
+        "matchPageUrl": {
+          "type": "string"
+        },
+        "leagueId": {
+          "type": "integer"
+        },
+        "leagueName": {
+          "type": "string"
+        },
+        "stage": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "homeScore": {
+          "type": "integer"
+        },
+        "awayScore": {
+          "type": "integer"
+        },
+        "minutesPlayed": {
+          "type": "integer"
+        },
+        "goals": {
+          "type": "integer"
+        },
+        "assists": {
+          "type": "integer"
+        },
+        "yellowCards": {
+          "type": "integer"
+        },
+        "redCards": {
+          "type": "integer"
+        },
+        "ratingProps": {
+          "$ref": "#/definitions/RatingProps"
+        },
+        "playerOfTheMatch": {
+          "type": "boolean"
+        },
+        "onBench": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "assists",
+        "awayScore",
+        "goals",
+        "homeScore",
+        "id",
+        "isHomeTeam",
+        "leagueId",
+        "leagueName",
+        "matchDate",
+        "matchPageUrl",
+        "minutesPlayed",
+        "onBench",
+        "opponentTeamId",
+        "opponentTeamName",
+        "playerOfTheMatch",
+        "ratingProps",
+        "redCards",
+        "stage",
+        "teamId",
+        "teamName",
+        "yellowCards"
+      ],
+      "title": "RecentMatch"
+    },
+    "MatchDate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "utcTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "utcTime"
+      ],
+      "title": "MatchDate"
+    },
+    "RatingProps": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "num": {
+          "$ref": "#/definitions/Fallback"
+        },
+        "bgcolor": {
+          "$ref": "#/definitions/Bgcolor"
+        }
+      },
+      "required": [
+        "bgcolor",
+        "num"
+      ],
+      "title": "RatingProps"
+    },
+    "StatSeason": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "seasonName": {
+          "type": "string"
+        },
+        "tournaments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StatSeasonTournament"
+          }
+        }
+      },
+      "required": [
+        "seasonName",
+        "tournaments"
+      ],
+      "title": "StatSeason"
+    },
+    "StatSeasonTournament": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "tournamentId": {
+          "type": "integer"
+        },
+        "entryId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "entryId",
+        "name",
+        "tournamentId"
+      ],
+      "title": "StatSeasonTournament"
+    },
+    "Traits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TraitsItem"
+          }
+        }
+      },
+      "required": [
+        "items",
+        "key",
+        "title"
+      ],
+      "title": "Traits"
+    },
+    "TraitsItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "key",
+        "title",
+        "value"
+      ],
+      "title": "TraitsItem"
+    },
+    "Trophies": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "playerTrophies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PlayerTrophy"
+          }
+        },
+        "coachTrophies": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "coachTrophies",
+        "playerTrophies"
+      ],
+      "title": "Trophies"
+    },
+    "PlayerTrophy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ccode": {
+          "type": "string"
+        },
+        "teamId": {
+          "type": "integer"
+        },
+        "teamName": {
+          "$ref": "#/definitions/TeamNameEnum"
+        },
+        "tournaments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PlayerTrophyTournament"
+          }
+        }
+      },
+      "required": [
+        "ccode",
+        "teamId",
+        "teamName",
+        "tournaments"
+      ],
+      "title": "PlayerTrophy"
+    },
+    "PlayerTrophyTournament": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ccode": {
+          "type": "string"
+        },
+        "leagueId": {
+          "type": "integer"
+        },
+        "leagueName": {
+          "type": "string"
+        },
+        "seasonsWon": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "seasonsRunnerUp": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "ccode",
+        "leagueId",
+        "leagueName",
+        "seasonsRunnerUp",
+        "seasonsWon"
+      ],
+      "title": "PlayerTrophyTournament"
+    },
+    "Fallback": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Fallback"
+    },
+    "Bgcolor": {
+      "type": "string",
+      "enum": [
+        "rgba(51, 199, 113, 1.0)",
+        "rgba(240, 128, 34, 1.0)",
+        "rgba(30, 136, 229, 1.0)",
+        "#989898"
+      ],
+      "title": "Bgcolor"
+    },
+    "TeamName": {
+      "type": "string",
+      "enum": [
+        "Barcelona",
+        "Athletic Club",
+        "Getafe"
+      ],
+      "title": "TeamName"
+    },
+    "Box": {
+      "type": "string",
+      "enum": [
+        "InsideBox",
+        "OutsideBox"
+      ],
+      "title": "Box"
+    },
+    "EventType": {
+      "type": "string",
+      "enum": [
+        "AttemptSaved",
+        "Miss",
+        "Goal",
+        "Post"
+      ],
+      "title": "EventType"
+    },
+    "Period": {
+      "type": "string",
+      "enum": [
+        "FirstHalf",
+        "SecondHalf"
+      ],
+      "title": "Period"
+    },
+    "PlayerNameEnum": {
+      "type": "string",
+      "enum": [
+        "Lamine Yamal"
+      ],
+      "title": "PlayerNameEnum"
+    },
+    "ShotType": {
+      "type": "string",
+      "enum": [
+        "LeftFoot",
+        "RightFoot"
+      ],
+      "title": "ShotType"
+    },
+    "Situation": {
+      "type": "string",
+      "enum": [
+        "RegularPlay",
+        "SetPiece",
+        "FromCorner",
+        "FastBreak"
+      ],
+      "title": "Situation"
+    },
+    "Color": {
+      "type": "string",
+      "enum": [
+        "#971e48"
+      ],
+      "title": "Color"
+    },
+    "ColorAlternate": {
+      "type": "string",
+      "enum": [
+        "#ab2151"
+      ],
+      "title": "ColorAlternate"
+    },
+    "StatFormat": {
+      "type": "string",
+      "enum": [
+        "number",
+        "fraction",
+        "percent"
+      ],
+      "title": "StatFormat"
+    },
+    "TeamNameEnum": {
+      "type": "string",
+      "enum": [
+        "Barcelona",
+        "Spain"
+      ],
+      "title": "TeamNameEnum"
+    }
+  }
+}
